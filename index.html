@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serkom - Software Developer</title>
+  <style>
+    /* Global styles */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      color: #ffffff;
+      background: #000000;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin: 0.5em 0;
+      font-weight: 700;
+    }
+
+    a {
+      color: #9b59b6;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #d3a4ff;
+    }
+
+    .header {
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .subtitle {
+      font-size: 1.2em;
+      color: #b3b3b3;
+    }
+
+    .links ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+    }
+
+    .links li {
+      margin: 10px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111111;
+    }
+
+    /* Animation */
+    .animate-text {
+      font-size: 2.5em;
+      animation: fadeIn 2s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1 class="animate-text">Serkom (Сергей Комаров)</h1>
+    <p class="subtitle">Software Developer (Python) | Web Developer (Frontend)</p>
+  </header>
+  <main>
+    <section class="links">
+      <h2>Find Me Online</h2>
+      <ul>
+        <li><a href="https://github.com/serkom2000" target="_blank">GitHub</a></li>
+        <li><a href="https://t.me/ishakus" target="_blank">Telegram</a></li>
+        <li><a href="https://serkom.tech" target="_blank">Projects</a></li>
+        <li><a href="mailto:serkom10@gmail.com">Email</a></li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Serkom</p>
+  </footer>
+  <script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        if (this.getAttribute('href').startsWith('#')) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
