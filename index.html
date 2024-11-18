@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Serkom - Software Developer</title>
+  <title>Serkom - Разработчик</title>
   <style>
-    /* Global styles */
+    /* Основные стили */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(120deg, #4b0000, #7a1f1f, #aa4b4b);
       color: #ffffff;
-      background: #000000;
       overflow-x: hidden;
       scroll-behavior: smooth;
     }
@@ -22,13 +24,13 @@
     }
 
     a {
-      color: #9b59b6;
+      color: #ffcccb;
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
     a:hover {
-      color: #d3a4ff;
+      color: #ffd6d6;
     }
 
     .header {
@@ -38,26 +40,16 @@
 
     .subtitle {
       font-size: 1.2em;
-      color: #b3b3b3;
-    }
-
-    .links ul {
-      list-style: none;
-      padding: 0;
-      text-align: center;
-    }
-
-    .links li {
-      margin: 10px 0;
+      color: #ff9999;
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      background: #111111;
+      background: rgba(0, 0, 0, 0.8);
     }
 
-    /* Animation */
+    /* Анимация текста */
     .animate-text {
       font-size: 2.5em;
       animation: fadeIn 2s ease-out;
@@ -73,39 +65,64 @@
         transform: translateY(0);
       }
     }
+
+    /* Форма обратной связи */
+    .contact-form {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .contact-form button {
+      background: #ff9999;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background: #ff6666;
+    }
   </style>
 </head>
 <body>
   <header class="header">
     <h1 class="animate-text">Serkom (Сергей Комаров)</h1>
-    <p class="subtitle">Software Developer (Python) | Web Developer (Frontend)</p>
+    <p class="subtitle">Разработчик программного обеспечения (Python) | Веб-разработчик (Frontend)</p>
   </header>
   <main>
-    <section class="links">
-      <h2>Find Me Online</h2>
-      <ul>
-        <li><a href="https://github.com/serkom2000" target="_blank">GitHub</a></li>
-        <li><a href="https://t.me/ishakus" target="_blank">Telegram</a></li>
-        <li><a href="https://serkom.tech" target="_blank">Projects</a></li>
-        <li><a href="mailto:serkom10@gmail.com">Email</a></li>
-      </ul>
+    <section class="about">
+      <h2>Обо мне</h2>
+      <p>Я специализируюсь на разработке программного обеспечения с использованием Python и JavaScript. Основное направление моей работы — создание парсеров, разработка ботов, а также интеграция различных API. Веб-разработка — ещё одна из моих сильных сторон, где я активно использую современные технологии.</p>
+    </section>
+    <section class="projects">
+      <h2>Мои проекты</h2>
+      <p>Все проекты находятся на <a href="https://serkom.tech" target="_blank">отдельном сайте serkom.tech</a>.</p>
+    </section>
+    <section class="contact-form">
+      <h2>Связаться со мной</h2>
+      <form action="https://formspree.io/f/your-email" method="POST">
+        <input type="text" name="name" placeholder="Ваше имя" required>
+        <input type="email" name="email" placeholder="Ваш email" required>
+        <textarea name="message" placeholder="Ваше сообщение" rows="5" required></textarea>
+        <button type="submit">Отправить</button>
+      </form>
     </section>
   </main>
-  <footer>
-    <p>&copy; 2024 Serkom</p>
-  </footer>
-  <script>
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        if (this.getAttribute('href').startsWith('#')) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-  </script>
 </body>
 </html>
