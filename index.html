@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Serkom - Разработчик</title>
+  <title>Serkom</title>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
   <style>
     /* Основные стили */
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
@@ -11,16 +12,26 @@
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(120deg, #4b0000, #7a1f1f, #aa4b4b);
       color: #ffffff;
       overflow-x: hidden;
-      scroll-behavior: smooth;
+    }
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, #4b0000, #7a1f1f, #aa4b4b);
+      z-index: -1;
+    }
+
+    .container {
+      text-align: center;
+      padding: 10% 5%;
     }
 
     h1, h2 {
-      text-align: center;
-      margin: 0.5em 0;
       font-weight: 700;
+      margin: 10px 0;
     }
 
     a {
@@ -33,54 +44,31 @@
       color: #ffd6d6;
     }
 
-    .header {
-      text-align: center;
-      padding: 100px 20px;
-    }
-
-    .subtitle {
-      font-size: 1.2em;
-      color: #ff9999;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.8);
-    }
-
-    /* Анимация текста */
-    .animate-text {
-      font-size: 2.5em;
-      animation: fadeIn 2s ease-out;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Форма обратной связи */
-    .contact-form {
-      max-width: 600px;
-      margin: 20px auto;
-      padding: 20px;
+    .section {
+      max-width: 90%;
+      margin: 5% auto;
+      padding: 5%;
       background: rgba(0, 0, 0, 0.8);
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     }
 
+    .section h2 {
+      margin-top: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 5%;
+      background: rgba(0, 0, 0, 0.9);
+    }
+
+    /* Компактная форма связи */
     .contact-form input,
     .contact-form textarea {
-      width: 100%;
+      width: 95%;
       padding: 10px;
-      margin: 10px 0;
+      margin: 5px 0;
       border: none;
       border-radius: 5px;
     }
@@ -88,7 +76,7 @@
     .contact-form button {
       background: #ff9999;
       color: #fff;
-      padding: 10px 20px;
+      padding: 10px 15px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
@@ -98,31 +86,145 @@
     .contact-form button:hover {
       background: #ff6666;
     }
+
+    /* Адаптивность */
+    @media (max-width: 768px) {
+      .container {
+        padding: 15% 5%;
+      }
+
+      .section {
+        padding: 8%;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
-  <header class="header">
-    <h1 class="animate-text">Serkom (Сергей Комаров)</h1>
-    <p class="subtitle">Разработчик программного обеспечения (Python) | Веб-разработчик (Frontend)</p>
-  </header>
-  <main>
-    <section class="about">
-      <h2>Обо мне</h2>
-      <p>Я специализируюсь на разработке программного обеспечения с использованием Python и JavaScript. Основное направление моей работы — создание парсеров, разработка ботов, а также интеграция различных API. Веб-разработка — ещё одна из моих сильных сторон, где я активно использую современные технологии.</p>
-    </section>
-    <section class="projects">
-      <h2>Мои проекты</h2>
-      <p>Все проекты находятся на <a href="https://serkom.tech" target="_blank">отдельном сайте serkom.tech</a>.</p>
-    </section>
-    <section class="contact-form">
-      <h2>Связаться со мной</h2>
-      <form action="https://formspree.io/f/your-email" method="POST">
-        <input type="text" name="name" placeholder="Ваше имя" required>
-        <input type="email" name="email" placeholder="Ваш email" required>
-        <textarea name="message" placeholder="Ваше сообщение" rows="5" required></textarea>
-        <button type="submit">Отправить</button>
-      </form>
-    </section>
-  </main>
+  <!-- Фон с партиклами -->
+  <div id="particles-js"></div>
+
+  <!-- Главная информация -->
+  <div class="container">
+    <h1>Serkom (Сергей Комаров)</h1>
+    <p>Разработчик программного обеспечения (Python) | Веб-разработчик (Frontend)</p>
+  </div>
+
+  <!-- О себе -->
+  <section class="section">
+    <h2>Обо мне</h2>
+    <p>Привет! Я разработчик, специализирующийся на Python и JavaScript. Мой опыт включает:</p>
+    <ul>
+      <li>Разработку парсеров и скраперов.</li>
+      <li>Создание ботов для Telegram и Discord.</li>
+      <li>Разработку проектов с использованием Arduino и IoT.</li>
+      <li>Работу с веб-технологиями: Django, Flask, React.</li>
+    </ul>
+    <p>Я активно использую Linux для разработки, что делает мою среду разработки максимально удобной и гибкой.</p>
+  </section>
+
+  <!-- Проекты -->
+  <section class="section">
+    <h2>Мои проекты</h2>
+    <p>Все мои проекты вы можете найти на <a href="https://serkom.tech" target="_blank">отдельном сайте serkom.tech</a>.</p>
+  </section>
+
+  <!-- Форма обратной связи -->
+  <section class="section contact-form">
+    <h2>Связаться со мной</h2>
+    <form action="https://formspree.io/f/your-email" method="POST">
+      <input type="text" name="name" placeholder="Ваше имя" required>
+      <input type="email" name="email" placeholder="Ваш email" required>
+      <textarea name="message" placeholder="Ваше сообщение" rows="4" required></textarea>
+      <button type="submit">Отправить</button>
+    </form>
+  </section>
+
+  <!-- Подвал -->
+  <footer>
+    <p>&copy; 2024 Serkom. Все права защищены.</p>
+  </footer>
+
+  <script>
+    /* Particles.js конфигурация */
+    particlesJS('particles-js', {
+      "particles": {
+        "number": {
+          "value": 100,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#ffffff"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          }
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": false
+        },
+        "size": {
+          "value": 3,
+          "random": true
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "repulse"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "repulse": {
+            "distance": 100,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 4
+          }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
 </body>
 </html>
